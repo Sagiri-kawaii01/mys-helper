@@ -6,6 +6,7 @@ plugins {
     alias(libs.plugins.kotlinMultiplatform)
     alias(libs.plugins.jetbrainsCompose)
     alias(libs.plugins.compose.compiler)
+    alias(libs.plugins.kotlinx.serialization)
 }
 
 kotlin {
@@ -39,6 +40,13 @@ kotlin {
             implementation(libs.androidx.lifecycle.viewmodel)
             implementation(libs.androidx.lifecycle.runtime.compose)
             implementation(projects.shared)
+        }
+
+        wasmJsMain.dependencies {
+            implementation(libs.ktor.client.core)
+            implementation(libs.ktor.serialization.kotlinx.json.wasm)
+            implementation(libs.ktor.client.content.negotiation.wasm)
+            implementation(libs.kotlinx.serialization)
         }
     }
 }
