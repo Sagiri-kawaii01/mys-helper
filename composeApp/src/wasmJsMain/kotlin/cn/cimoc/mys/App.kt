@@ -10,19 +10,27 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.lifecycle.ViewModel
 import org.jetbrains.compose.resources.painterResource
 
 import mys.composeapp.generated.resources.Res
 import mys.composeapp.generated.resources.compose_multiplatform
+import org.koin.compose.koinInject
 
 @Composable
 fun App() {
+    
     MaterialTheme {
         var showContent by remember { mutableStateOf(false) }
+        val viewModel: TestViewModel = koinInject()
         Column(Modifier.fillMaxWidth(), horizontalAlignment = Alignment.CenterHorizontally) {
-            Button(onClick = { showContent = !showContent }) {
+            Button(onClick = {
+                showContent = !showContent
+                viewModel.add()
+            }) {
                 Text("Click me!")
             }
+            Text(viewModel.number.value.toString())
             AnimatedVisibility(showContent) {
                 val greeting = remember { Greeting().greet() }
                 Column(Modifier.fillMaxWidth(), horizontalAlignment = Alignment.CenterHorizontally) {
