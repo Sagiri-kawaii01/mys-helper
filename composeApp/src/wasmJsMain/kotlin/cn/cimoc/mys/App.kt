@@ -10,7 +10,7 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.lifecycle.ViewModel
+import cn.cimoc.mys.model.TestViewModel
 import org.jetbrains.compose.resources.painterResource
 
 import mys.composeapp.generated.resources.Res

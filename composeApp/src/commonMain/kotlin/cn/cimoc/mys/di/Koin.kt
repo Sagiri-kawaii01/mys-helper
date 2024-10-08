@@ -1,6 +1,6 @@
 package cn.cimoc.mys.di
 
-import cn.cimoc.mys.TestViewModel
+import cn.cimoc.mys.model.TestViewModel
 import org.koin.core.context.startKoin
 import org.koin.dsl.koinApplication
 import org.koin.dsl.module

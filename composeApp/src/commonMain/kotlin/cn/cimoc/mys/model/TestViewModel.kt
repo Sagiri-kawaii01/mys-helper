@@ -1,4 +1,4 @@
-package cn.cimoc.mys
+package cn.cimoc.mys.model
 
 import androidx.compose.runtime.*
 import androidx.lifecycle.ViewModel
