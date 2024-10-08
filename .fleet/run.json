@@ -1,0 +1,10 @@
+{
+    "configurations": [
+        {
+            "type": "gradle",
+            "name": "Server Run",
+            "tasks": [ ":server:run" ],
+        },
+
+    ]
+}

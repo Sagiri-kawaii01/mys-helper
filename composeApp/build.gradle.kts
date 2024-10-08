@@ -21,6 +21,7 @@ kotlin {
                     static = (static ?: mutableListOf()).apply {
                         // Serve sources to debug inside browser
                         add(projectDirPath)
+                        open = false
                     }
                 }
             }
@@ -42,6 +43,8 @@ kotlin {
             api(libs.koin.core)
             implementation(libs.koin.compose.multiplatform)
             implementation(projects.shared)
+            implementation("org.jetbrains.androidx.lifecycle:lifecycle-viewmodel-compose:2.8.0")
+            implementation("org.jetbrains.androidx.navigation:navigation-compose:2.7.0-alpha07")
         }
 
         wasmJsMain.dependencies {

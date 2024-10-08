@@ -3,7 +3,7 @@ import org.jetbrains.kotlin.gradle.targets.js.webpack.KotlinWebpackConfig
 
 plugins {
     alias(libs.plugins.kotlinMultiplatform)
-    
+
 }
 
 kotlin {
@@ -21,12 +21,18 @@ kotlin {
             }
         }
     }
-    
+
     jvm()
-    
+
     sourceSets {
         commonMain.dependencies {
             // put your Multiplatform dependencies here
+            implementation(libs.ktor.client.core)
+        }
+        wasmJsMain.dependencies {
+            implementation(libs.ktor.serialization.kotlinx.json.wasm)
+            implementation(libs.ktor.client.content.negotiation.wasm)
+            implementation(libs.kotlinx.serialization)
         }
     }
 }
